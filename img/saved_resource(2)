@@ -1,0 +1,1018 @@
+function unique(arr){var result=[],hash={};for(var i=0,elem;(elem=arr[i])!=null;i++){if(!hash[elem]){result.push(elem);hash[elem]=true}}return result}
+function getName(){var e=document.getElementById("projnames").value;var flag=document.getElementById("projnames").flag;var houseUrl="";var obj=document.getElementById(e);if(obj!=null){houseUrl=obj.innerHTML}else{var ulElt=document.getElementById("xinfangList");var childrens=ulElt.childNodes;var len=childrens.length;var arrayObj=new Array();for(var i=0;i<len;i++){if(childrens[i].id!=null&&childrens[i].id.indexOf(e)>=0){arrayObj.push(childrens[i].id)}}arrayObj=unique(arrayObj);if(arrayObj.length>3){houseUrl=""}else{for(var i=0;i<arrayObj.length;i++){if(arrayObj[i].indexOf("可售房源")>0){arrayObj.splice(i,1)}if(arrayObj[i].indexOf("可售户型")>0){arrayObj.splice(i,1)}}if(arrayObj.length==1){var ob=document.getElementById(arrayObj[0]);houseUrl=ob.innerHTML;/**判断知识**/if(houseUrl.indexOf("/house/s/d3")>0){houseUrl=""}}}}
+if(typeof(flag)=="undefined"){flag="chafangjia"}if(flag=="chafangjia"){PingGus(e,0)}else{if(flag=="maixinfang"){clickMainxinfang(e,houseUrl)}else{if(flag=="zhuangxiujiaju"){clickZhuangxiu(e)}else{if(flag=="fangchankuaixun"){clickFangchankuaixun(e)}else{if(flag=="maiershoufang"){clickMaiershoufang(e)}else{if(flag=="zhaozufang"){clickZhaozufang(e)}else{if(flag=="haiwaifangchan"){clickHaiwaifangchan()}}}}}}}}function clickMaiershoufang(e){var val=$URL.encode(e);val=val.toLowerCase();var n=e;if(n==""||n=="请输入关键字(楼盘名或地名)"){""!=document.getElementById("projnames").value&&"请输入关键字(楼盘名或地名)"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://esf.fang.com/house/c61-kw"+val,document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://esf.fang.com/house/c61-kw"+val,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://esf.fang.com/",document.getElementById("pinggu").click("return false"))}else{""!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://esf.fang.com/house/c61-kw"+val+"/",document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://esf.fang.com/house/c61-kw"+val+"/",(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://esf.fang.com/",document.getElementById("pinggu").click("return false"))}}function clickZhaozufang(e){var val=$URL.encode(e);var n=e;if(n==""||n=="请输入关键字(楼盘名或地名)"){""!=document.getElementById("projnames").value&&"请输入关键字(楼盘名或地名)"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://zu.fang.com/house/s31-kw"+val,document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://zu.fang.com/house/s31-kw"+val,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://zu.fang.com/",document.getElementById("pinggu").click("return false"))}else{""!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://zu.fang.com/house/s31-kw"+val,document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://zu.fang.com/house/s31-kw"+val,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://zu.fang.com/",document.getElementById("pinggu").click("return false"))}}function PingGus(e,n){var cityName=document.getElementById('cityName').value;if(typeof(cityName)!="undefined"&&"全国"==cityName){cityName="北京"}var a=e,t=document.getElementById("projnames"),g=document.getElementById("pinggu"),u="http://fangjia.fang.com/pinggu/ajax/searchtransfer.aspx?strcity="+escape(cityName);""!=t.value&&-1===t.value.indexOf("请输入小区名称或地址")&&(u=13!=a?u+"&projname="+escape(a):u+"&projname="+escape(t.value)),g.href=u,!0!==n&&document.getElementById("pinggu").click()}function clickZhuangxiu(e,jiaUrl){if(typeof(jiaUrl)=="undefined"||jiaUrl==""){var val=$URL.encode(e);var n=e;""!=document.getElementById("projnames").value&&"请输入户型/功能间/风格等关键词"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://home.fang.com/album/search/?page=1&sortid=11&keyword="+val,document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://home.fang.com/album/search/?page=1&sortid=11&keyword="+val,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://home.fang.com/album/search/?page=1&sortid=11",document.getElementById("pinggu").click("return false"))}else{var n=e;""!=document.getElementById("projnames").value&&"请输入户型/功能间/风格等关键词"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href=jiaUrl,document.getElementById("pinggu").click()):document.getElementById("pinggu").href=jiaUrl,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href=jiaUrl,document.getElementById("pinggu").click("return false"))
+}}function clickMainxinfang(e,houseUrl){if(typeof(houseUrl)=="undefined"||houseUrl==""){var n=e;""!=document.getElementById("projnames").value&&"请输入关键字（楼盘名/地名/开发商等）"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://newhouse.fang.com/house/s/a9"+$URL.encode(n)+"/",document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://newhouse.fang.com/house/s/a9"+$URL.encode(document.getElementById("projnames").value)+"/",(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://newhouse.fang.com/house/s/",document.getElementById("pinggu").click("return false"))}else{var n=e;""!=document.getElementById("projnames").value&&"请输入关键字（楼盘名/地名/开发商等）"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href=houseUrl.replace(/\&amp;/g,"&"),document.getElementById("pinggu").click()):document.getElementById("pinggu").href=houseUrl,(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href="http://newhouse.fang.com/house/s/",document.getElementById("pinggu").click("return false"))}}function clickFangchankuaixun(e){if("请输入关键字"==document.getElementById("projnames").value){e=""}var q=e;var keyword=encodeURI(encodeURI(q));var type=encodeURI(encodeURI("资讯"));var fld=encodeURI(encodeURI("全文"));var time=encodeURI(encodeURI("不限时间"));var sort=encodeURI(encodeURI("相关度"));var cityName=document.getElementById('cityName').value;if(typeof(cityName)!="undefined"&&"全国"==cityName){cityName="北京"}var cityScope=encodeURI(encodeURI(cityName));var code="<%=city_code%>";var url="";if("taizhou"==code||"huaian"==code||"lyg"==code||"jy"==code||"wuhu"==code||"jx"==code||"huzhou"==code||"qz"==code||"zhangzhou"==code||"bengbu"==code||"yancheng"==code||"zhenjiang"==code||"sq"==code||"zb"==code||"jining"==code||"linyi"==code||"hd"==code||"jl"==code||"anshan"==code||"lc"==code||"mas"==code||"daqing"==code||"leshan"==code||"guilin"==code||"xj"==code||"jiujiang"==code||"xn"==code||"liuzhou"==code||"xt"==code||"zhuzhou"==code||"yueyang"==code||"ganzhou"==code){url="http://news.<%=city_code%>.fang.com/gdxw.html"}else{if("bj"==code||"quanguo"==code){url="http://news.fang.com/"}else{url="http://news.<%=city_code%>.fang.com/"}}var n=e;""!=document.getElementById("projnames").value&&"请输入关键字"!=document.getElementById("projnames").value?(13!=n?(document.getElementById("pinggu").href="http://news.fang.com/s/zx_"+keyword+"_"+type+"_"+fld+"_"+time+"_"+sort+"_"+cityScope+"_1.html",document.getElementById("pinggu").click()):document.getElementById("pinggu").href="http://news.fang.com/s/zx_"+keyword+"_"+type+"_"+fld+"_"+time+"_"+sort+"_"+cityScope+"_1.html",(13==n)&&document.getElementById("pinggu").click("return false")):(document.getElementById("pinggu").href=url,document.getElementById("pinggu").click("return false"))}function clickHaiwaifangchan(e){var n=e;var url="http://world.fang.com/";var val=document.getElementById("projnames").value;if(n==""||n=="请输入关键字(国家/城市/地区)"||typeof(n)=="undefined"){if(val!=""&&val!="请输入关键字(国家/城市/地区)"){var pathElt=document.getElementById(val);if(typeof(pathElt)=="undefined"||pathElt==null){url+="house/kw"+val}else{url+=pathElt.innerHTML}}}else{url+=n}document.getElementById("pinggu").href=url;document.getElementById("pinggu").click("return false")};
+
+function clearClass(){document.getElementById("dsy_D02_19").className="";document.getElementById("dsy_D02_06").className="";document.getElementById("dsy_D02_03").className="";document.getElementById("dsy_D02_05").className="";document.getElementById("dsy_D02_02").className="";document.getElementById("dsy_D02_04").className="";document.getElementById("dsy_D02_20").className=""}function clearDisplay(){document.getElementById("searchjtId1").style.display="none";document.getElementById("searchjtId2").style.display="none";document.getElementById("searchjtId3").style.display="none";document.getElementById("searchjtId4").style.display="none";document.getElementById("searchjtId5").style.display="none";document.getElementById("searchjtId6").style.display="none";document.getElementById("searchjtId7").style.display="none"}function change(val){if(val=="chafangjia"){clearClass();clearDisplay();document.getElementById("dsy_D02_19").className="cur";document.getElementById("projnames").value="请输入小区名称或地址，给自己的房子估个价";document.getElementById("projnames").defaultValue="请输入小区名称或地址，给自己的房子估个价";document.getElementById("projnames").flag="chafangjia";document.getElementById("searchjtId1").style.display="block"}if(val=="maixinfang"){clearClass();clearDisplay();document.getElementById("dsy_D02_02").className="cur";document.getElementById("searchjtId2").style.display="block";document.getElementById("projnames").flag="maixinfang";var l={"q":"","vv":"maixinfang",init:"true"};var m=function(a){var b=a.responseText;if(""!=b){var c=b.split(",");document.getElementById("projnames").value=c[parseInt(Math.random()*c[c.length-1])].split("^")[0];document.getElementById("projnames").defaultValue="";var ulElt=document.getElementById("xinfangList");for(var v=0;v<c.length-1;v++){var li=document.createElement("li");li.id=c[v].split("^")[0];li.innerHTML=c[v].split("^")[1];ulElt.appendChild(li)}}else{document.getElementById("projnames").value="请输入关键字（楼盘名/地名/开发商等）";document.getElementById("projnames").defaultValue="请输入关键字（楼盘名/地名/开发商等）"}};new SFXHR("proxy/sskdropdowndataV7","post",l,m)}if(val=="maiershoufang"){clearClass();clearDisplay();document.getElementById("dsy_D02_03").className="cur";document.getElementById("projnames").value="请输入关键字(楼盘名或地名)";document.getElementById("projnames").defaultValue="请输入关键字(楼盘名或地名)";document.getElementById("projnames").flag="maiershoufang";document.getElementById("searchjtId3").style.display="block"}if(val=="zhaozufang"){clearClass();clearDisplay();document.getElementById("dsy_D02_04").className="cur";document.getElementById("projnames").value="请输入关键字(楼盘名或地名)";document.getElementById("projnames").defaultValue="请输入关键字(楼盘名或地名)";document.getElementById("projnames").flag="zhaozufang";document.getElementById("searchjtId4").style.display="block"}if(val=="zhuangxiujiaju"){clearClass();clearDisplay();document.getElementById("dsy_D02_05").className="cur";document.getElementById("projnames").value="请输入户型/功能间/风格等关键词";document.getElementById("projnames").defaultValue="请输入户型/功能间/风格等关键词";document.getElementById("projnames").flag="zhuangxiujiaju";document.getElementById("searchjtId5").style.display="block"}if(val=="fangchankuaixun"){clearClass();clearDisplay();document.getElementById("dsy_D02_06").className="cur";document.getElementById("projnames").value="请输入关键字";document.getElementById("projnames").defaultValue="请输入关键字";document.getElementById("projnames").flag="fangchankuaixun";document.getElementById("searchjtId6").style.display="block"}if(val=="haiwaifangchan"){clearClass();clearDisplay();document.getElementById("dsy_D02_20").className="cur";document.getElementById("projnames").value="请输入关键字(国家/城市/地区)";document.getElementById("projnames").defaultValue="请输入关键字(国家/城市/地区)";document.getElementById("projnames").flag="haiwaifangchan";document.getElementById("searchjtId7").style.display="block"}$("#projnames").trigger("blur");$(".banner_magnr").trigger("click")}function focusEvent(event,doc){var val=document.getElementById("projnames").value;SFUI.toggleHint(doc,val);doc.className="sinputstyle";doc.onmouseout="";SFSF.house.suggest(event,doc)};$(function(){
+	//same as cmsAtag2.js, but use different jquery version.
+	$('.cmsA').on('click', function(){
+		var originalUrl = $(this).next("input[name='originalUrl']").val();
+		
+		window.open(originalUrl,'_blank'); 
+		return false;
+	});
+});
+function setCookies(name, value, expires, path, domain, secure) {
+	document.cookie = name + "=" + escape(value)
+			+ ((path) ? ";path=" + path : "")
+			+ ((domain) ? ";domain=" + domain : "")
+			+ ((secure) ? ";secure" : "");
+}
+var backurl = location.href;
+var str = new Array();
+str = backurl.split("?");
+if (str.length > 1) {
+	var source = new Array();
+	source = str[1].split("=");
+	if (source.length > 1 && typeof (source[0]) != "undefined"
+			&& source[0] == "sf_source") {
+		setCookies("sf_source", source[1].toLowerCase(), false, "/", "fang.com", "");
+	} else if (source.length > 1 && typeof (source[0]) != "undefined"
+			&& source[0] == "s") {
+		setCookies("s", source[1].toLowerCase(), false, "/", "fang.com", "");
+	} else {
+		setCookies("sf_source", "", false, "/", "fang.com", "");
+		setCookies("s", "", false, "/", "fang.com", "");
+	}
+} else {
+	setCookies("sf_source", "", false, "/", "fang.com", "");
+	setCookies("s", "", false, "/", "fang.com", "");
+}
+
+var refer = document.referrer;
+if (typeof (refer) != "undefined" && refer.indexOf("hao123") >= 0) {
+	setCookies("sf_source", "hao123", false, "/", "fang.com", "");
+}
+if(typeof (refer) != "undefined" && refer.indexOf("123.sogou") >= 0){
+	setCookies("sf_source", "sogoudh", false, "/", "fang.com", "");
+}var backurl = urlencode(location.href);
+function getCookie(name) {
+	document.domain = 'fang.com';
+	var start = document.cookie.indexOf(name + "=");
+	var len = start + name.length + 1;
+	if ((!start) && (name != document.cookie.substring(0, name.length)))
+		return null;
+	if (start == -1)
+		return null;
+	var end = document.cookie.indexOf(";", len);
+	if (end == -1)
+		end = document.cookie.length;
+	return document.cookie.substring(len, end);
+}
+var cookie_passport = getCookie('passport');
+var cookie_new_sfut = getCookie('sfut');
+var isLogin = false;
+var showLoginName = "";
+var showLoginId = "";
+var dsy_D01_97 = document.getElementById('dsy_D01_97');
+if(dsy_D01_97 != undefined){
+	dsy_D01_97.style.display="none";
+}
+if (cookie_new_sfut!=null && cookie_new_sfut!='') {
+	jQuery
+			.ajax({
+				type : 'get',
+				dataType : 'jsonp',
+				url : "http://fang.com/ajax2.do",//�ĳ��µ�jsp-----ajax_new.jsp
+				data : {},
+				complete : function() {
+				},
+				error : function() {
+				},
+				success : function(msgRes) {
+					var result = msgRes.feed.index;
+					if (result == 100) {
+						isLogin = true;
+						if (isLogin) {
+							showNickName = msgRes.feed.nickname; //���ص�nickname
+							showLoginName = msgRes.feed.username; //���ص�username
+							showLoginId = msgRes.feed.userid; //���ص�userid
+					         document.getElementById('sfHeadRegister').innerHTML = "�˳�";
+							document.getElementById('sfHeadRegister').href = "http://passport.fang.com/logout.aspx?backurl="
+									+ backurl;//����logout
+							document.getElementById('sfHeadRegister').target="_self";
+							var nameStrTemp = getByteVal(showLoginName,8);
+							var nicknameStr = getByteVal(showNickName,8);
+							document.getElementById('dsy_D01_13').style.width="75px";
+							document.getElementById('dsy_D01_89').style.display="none";
+							//document.getElementById('dsy_D01_87').style.display="none";
+							var dsy_D01_97 = document.getElementById('dsy_D01_97');
+							if(dsy_D01_97 != undefined){
+								dsy_D01_97.style.display="";
+							}
+							if(null!=nicknameStr && ''!= nicknameStr){
+								document.getElementById('sfHeadUsername').innerHTML = nicknameStr;
+							}else{
+								document.getElementById('sfHeadUsername').innerHTML = nameStrTemp;
+							}
+							document.getElementById('sfHeadUsername').href="http://my.fang.com/";
+						} else {
+							document.getElementById('sfHeadUsername').style.width="55px";
+							document.getElementById('sfHeadUsername').innerHTML = "��¼";
+							document.getElementById('sfHeadRegister').innerHTML = "ע��";
+							document.getElementById('sfHeadRegister').href="https://passport.fang.com/default.aspx?aspxerrorpath=/NewLogin.aspx";
+						}
+					}
+				}
+			});
+} 
+function urlencode(str) {
+	str = (str + '').toString();
+	return encodeURIComponent(str).replace(/!/g, '%21')
+			.replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g,
+					'%29').replace(/\*/g, '%2A').replace(/%20/g, '+');
+}
+
+function getByteVal(val, max) {  
+      var returnValue = '';  
+      var byteValLen = 0;  
+      for (var i = 0; i < val.length; i++) {  
+          if (val[i].match(/[^\x00-\xff]/ig) != null)  
+              byteValLen += 2;  
+          else  
+              byteValLen += 1;  
+
+          if (byteValLen > max)  
+              break;  
+
+          returnValue += val[i];  
+      }  
+      return returnValue;  
+  } function clickLeftHb()
+{
+   var displayVal=$('.monyehome').css('display');
+  
+   if(displayVal=='block')
+   {
+      $('.monyehome').animate({left:'5px',top:'450px',position:'fixed',opacity:0.5},800,function(){$('.monyehome').css('display','none')});
+   }else if(displayVal=='none')
+   {
+      $('.monyehome').animate({opacity:1,top:'63px',left:'50%'},500,function(){$('.monyehome').css('display','block')});
+   }
+   
+   return false;
+   
+}
+
+
+function getCookie(name)
+{
+       var start = document.cookie.indexOf( name + "=" );
+		var len = start + name.length + 1;
+		if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) )
+		{
+			return null;
+		}
+		if ( start == -1 ) return null;
+		var end = document.cookie.indexOf( ";", len );
+		if ( end == -1 ) end = document.cookie.length;
+		return unescape( document.cookie.substring( len, end ) );
+}
+function setCookie(name, value, expires, path, domain, secure)
+{
+        var today = new Date();
+		today.setTime( today.getTime() );
+		document.cookie = name + "=" +escape( value ) +
+		( ( expires ) ? ";expires=" + expires.toGMTString() : "" ) + //expires.toGMTString()
+		( ( path ) ? ";path=" + path : "" ) +
+		( ( domain ) ? ";domain=" + domain : "" ) +
+		( ( secure ) ? ";secure" : "" );
+}
+
+function setHongbaoCookie()
+{
+        var cityCode=$("#bigcityEnId").val();
+        var tdate = new Date();
+		tdate.setHours(tdate.getHours()+ 24);
+		setCookie("showHb"+cityCode, 1, tdate, "/", "fang.com", "");
+		return true;
+}
+
+function setAdCookie(website)
+{
+        var cityCode=$("#bigcityEnId").val();
+        var tdate = new Date();
+		tdate.setHours(tdate.getHours()+ 24);
+		setCookie("showAd"+cityCode+website, 1, tdate, "/", "fang.com", "");
+		return true;
+}
+    
+    
+    var ref=document.referrer;
+
+    if(typeof(ref)!="undefined"&&ref.indexOf("hao123")>=0)
+    {
+      var val=document.getElementById("hao123Id").value;
+      if(val=="true")
+      {
+       $("#moneyHomeId").css("display","none");
+        $("#monyePopId").css("display","block");
+        $("#adHao123Id").css("display","block");
+       
+       setTimeout(function(){
+       $("#monyePopId").fadeOut(5000);
+       },3000);
+       }
+    }
+     if(typeof(ref)!="undefined"&&ref.indexOf("360")>=0)
+    {
+      var val=document.getElementById("hezuo360Id").value;
+       if(val=="true")
+      {
+        $("#moneyHomeId").css("display","none");
+        $("#monyePopId").css("display","block");
+        $("#ad360Id").css("display","block");
+       
+       setTimeout(function(){
+         $("#monyePopId").fadeOut(5000);
+       },3000);
+       
+       }
+    }
+     if(typeof(ref)!="undefined"&&ref.indexOf("sogou")>=0)
+    {
+       var val=document.getElementById("sogouId").value;
+       if(val=="true")
+       {
+        $("#moneyHomeId").css("display","none");
+        $("#monyePopId").css("display","block");
+        $("#adSogouId").css("display","block");
+       
+       setTimeout(function(){
+         $("#monyePopId").fadeOut(5000);
+       },3000);
+       
+       }
+    }
+    
+  
+
+
+var cityCode=$("#bigcityEnId").val();
+
+var website="";
+if(typeof(ref)!="undefined"&&ref.indexOf("hao123")>=0)
+{
+  website="123";
+}
+if(typeof(ref)!="undefined"&&ref.indexOf("360")>=0)
+{
+    website="360";
+}
+
+if(typeof(ref)!="undefined"&&ref.indexOf("sogou")>=0)
+{
+  website="sogou";
+}
+if (getCookie("showAd"+cityCode+website) == 1){
+  $("#monyePopId").css("display","none");
+}else
+{
+   setAdCookie(website);
+}/*
+$('#banner_show').find('script[charset="gbk"]').each(function (index,element) {
+    if (element.next()) �?
+    �?
+});*/
+/*banner*/
+
+$('.bar01').on('webkitAnimationEnd', '.barragetda', function () {
+    var that = $(this);
+    var index =  that.index() % 4;
+    var durationArr = [12,15,10,18];
+    var delayArr = [0,5.5,3,1.5];
+    var time = delayArr[index];
+    that.hide();
+    clearTimeout(this.timer);
+    this.timer = setTimeout(function () {
+        that.show();
+    },time * 1000);
+});
+
+
+$(function(){
+
+    'use strict';
+
+    var ieFlag = !1;
+    var browserName = navigator.userAgent;
+    if (browserName.indexOf('MSIE 9.0') > 0 || browserName.indexOf('MSIE 8.0') > 0) {
+        ieFlag = !0;
+    }
+
+    var timer=5000;
+    var showtime = 800;
+    var showbox = $("#banner_show");
+	var className=document.getElementById("danmu_inbox_id").value;
+    var inbox = $(className);
+    var movelist = $("#yq_banner_list");
+    var s;
+    var loopS;
+    var size =inbox.size();
+    var play = 1;
+    var index= ABCD;
+	
+    function move(){
+
+
+  // console.log(intervalTimer);
+        // clearInterval(window.intervalTimer);
+        // barrage.loop();
+        if(index >= 5){
+            index = -1;
+        }
+        $('.barclose').hide();
+        var closeBtn = $('#closeBtn');
+        var current = $('#banner_ctr').find('span').eq(index+1);
+        if (current.attr('data-class') === 'close') {
+            closeBtn.html('\u5f00\u542f\u5f39\u5e55');
+        }else {
+            closeBtn.html('\u5173\u95ed\u5f39\u5e55');
+        }
+
+        index++;
+        if(index>size-1){
+            index=0;
+        }
+        if(size>1)
+        {
+            inbox.each(function(e){
+                inbox.eq(e).hide(0);
+                $("#banner_magbox"+e).hide();
+                movelist.find("a").eq(e).removeClass("hover");
+                if(e == index){
+                    inbox.eq(index).fadeIn(showtime);
+                    $("#banner_magbox"+index).show();
+                    clearClass1();
+                    var id2="banner_ctr"+(index+1);
+                    // 实际中obj参数根据广告标识�? 弹幕begin
+                  //  $('#danmu').find('div').remove();
+                    document.getElementById(id2).className="current";
+                   
+				    var dianpingHtml=inbox.eq(index).find("div").eq(0).html();
+                    var dianpingUrl=inbox.eq(index).find("div").eq(1).html();
+                   
+					  var currentDanmu = $('#danmu' + index);
+                    currentDanmu.siblings('.bar01').css({
+                            opacity: 0,
+                            'z-index': -99,
+                            visibility: 'hidden'
+                        }).find('div').css('animation-play-state','paused');
+
+                    if (ieFlag){
+                        currentDanmu.siblings('.bar01').find('div').pause();
+                    }
+                    
+
+                    var divArr = currentDanmu.find('div');
+                    var danmuLen = divArr.length;
+                    if($.trim(dianpingHtml) != "") {
+                        if (danmuLen > 0) {
+                            $('.barclose').show();
+                            currentDanmu.css({
+                                opacity: 1,
+                                'z-index': 99,
+                                visibility: 'visible'
+                            })
+                            divArr.css('animation-play-state','running');
+                            if (ieFlag) {
+                                divArr.resume();
+                            }
+                        }else {
+                            currentDanmu.show();
+                            barrage = new Barrage({text:dianpingHtml.split(','),type:[],host:'',url:dianpingUrl,wrapper:'danmu' + index});
+                            currentDanmu.css({
+                                opacity: 1,
+                                'z-index': 99,
+                                visibility: 'visible'
+                            });
+                            divArr.css('animation-play-state','running');
+                            if (ieFlag) {
+                                divArr.resume();
+                            }
+                        }
+                    }
+                  
+                    // 弹幕end
+                    movelist.find("a").eq(index).addClass("hover");
+                }
+            });
+        }
+    }
+	  // img 1 start
+    var imgNum = inbox.length;
+    if (imgNum === 1) {
+		var dianping01Html=$(className).eq(0).find("div").eq(0).html();
+		var dianping01Url=$(className).eq(0).find("div").eq(1).html();
+		if(dianping01Html.trim()!="")
+		{
+		 loopS = barrage.loop();
+		}
+       
+    }
+    //  end
+    imgNum !== 1 && (s = setInterval(move,timer));
+       function stopp(obj){
+        $('.bigbanner').on('mouseover', obj, function() {
+            if(play){
+                clearInterval(s);
+                play = 0;
+            }
+        });
+        $('.bigbanner').on('mouseleave', obj, function() {
+            if(!play && imgNum !== 1){
+                s = setInterval(move,timer);
+                play = 1;
+                clearInterval(loopS);
+            }
+        });
+    }
+    imgNum !== 1 && stopp(className);
+    stopp('.barragetda');
+    stopp(className);
+    function clearClass1(){
+        document.getElementById("banner_ctr1").className="";
+        document.getElementById("banner_ctr2").className="";
+        document.getElementById("banner_ctr3").className="";
+        document.getElementById("banner_ctr4").className="";
+        document.getElementById("banner_ctr5").className="";
+        document.getElementById("banner_ctr6").className="";
+    }
+    $("#banner_ctr1").click(function(){
+        index=-1;
+        move();
+    });
+    $("#banner_ctr2").click(function(){
+        index=0;
+        move();
+    });
+    $("#banner_ctr3").click(function(){
+        index=1;
+        move();
+    });
+    $("#banner_ctr4").click(function(){
+        index=2;
+        move();
+    });
+    $("#banner_ctr5").click(function(){
+        index=3;
+        move();
+    });
+    $("#banner_ctr6").click(function(){
+        index=4;
+        move();
+    });
+    $("#banner_ctr1").mouseover(function(){
+        // event.stopPropagation();
+        index=-1;
+        move();
+    });
+    $("#banner_ctr2").mouseover(function(){
+        //event.stopPropagation();
+        index=0;
+        move();
+    });
+    $("#banner_ctr3").mouseover(function(){
+        //event.stopPropagation();
+        index=1;
+        move();
+    });
+    $("#banner_ctr4").mouseover(function(){
+        index=2;
+        move();
+    });
+    $("#banner_ctr5").mouseover(function(){
+        //event.stopPropagation();
+        index=3;
+        move();
+    });
+    $("#banner_ctr6").mouseover(function(){
+        //event.stopPropagation();
+        index=4;
+        move();
+    });
+    $(".banner_btn_right").click(function(){
+        move();
+    });
+    $(".banner_btn_left").click(function(){
+        index--;
+        index--;
+        if (index <= -2) {
+            index = size - 2;
+        }
+        move();
+
+    });
+    movelist.find("a").click(function(){
+        var rel = $(this).attr("rel");
+        inbox.each(function(e){
+            inbox.eq(e).hide(0);
+            movelist.find("a").eq(e).removeClass("hover");
+            $("#banner_magbox"+e).hide(0);
+            if(e == rel){
+                inbox.eq(rel).fadeIn(showtime);
+                movelist.find("a").eq(rel).addClass("hover");
+                $("#banner_magbox"+rel).show(0);
+            }
+        });
+    });
+    $(className).each(function(e){
+        var inboxsize = $(className).size();
+        var inboxwimg = $(this).find("img").width();
+        $(className).eq(e).css({"margin-left":(-1)*inboxwimg/2+"px","z-index":inboxsize-e});
+    });
+    $(".banner").hover(
+        function(){
+            $(".banner_pre_next").fadeIn();
+        },function(){
+            $(".banner_pre_next").fadeOut();
+        })
+    // $('.banner_btn_left').trigger('click');
+	
+	$(".add1200").addClass("add1300").removeClass("add1200");
+});//���Ͻǹرհ�ť�¼�����
+function hidezuji(){
+	$("#zujiFlag").val("0");
+	document.getElementById("hideZuji").style.display = 'none';
+	$("#moverside").removeClass("r455");
+	//document.getElementById("hideTabdiv").style.display = 'none';
+	$("#hideTabdiv").removeClass("rside");
+	$("#hideTabdiv").addClass("rsideV01");
+}
+//�����㼣��ʾ������
+function zujiShowOrHide(){
+	var flag = $("#zujiFlag").val();
+	if(flag==1){
+		$("#zujiFlag").val("0");
+		$("#hideZuji").css("display","none");
+		$("#moverside").removeClass("r455");
+		$("#hideTabdiv").removeClass("rside");
+		$("#hideTabdiv").addClass("rsideV01");
+		
+	}
+	if(flag==0){
+		$("#zujiFlag").val("1");
+		$("#hideZuji").css("display","block");
+		$("#moverside").addClass("r455");
+		$("#hideTabdiv").removeClass("rsideV01");
+		$("#hideTabdiv").addClass("rside");
+		var ppCity=$("#hideCity").val();
+		$.ajax({
+			type:'get',
+	        dataType:'jsonp',
+	        url:"http://www1.fang.com/kanfangAndOrderV2/footPrint.do",
+	        data:"city="+ppCity,
+	        complete:function(){
+	        },
+	        error:function(){
+	        	//alert('error3');
+	        },
+	        success:function(res){
+	        	
+	        	var newHouseArr=res.result.newhouse;
+	        	var esfhouseArr=res.result.esfhouse;
+	        	var renthouseArr=res.result.renthouse;
+	            var newHouseUlId=$("#newhouseFootId");
+	            var rentHouseUlId=$("#renthouseId");
+	            var esfHouseUlId=$("#esfHouseFootId");
+	            newHouseUlId.find("li").remove();
+	            rentHouseUlId.find("li").remove();
+	            esfHouseUlId.find("li").remove();
+	            if(typeof(newHouseArr)!="undefined"){
+	            	for(var i=0;i<newHouseArr.length;i++)
+	 	            {
+	 	             var val=newHouseArr[i];
+	 	             if(i%2==0){
+	 	                var liElt = $("<li class='mar15'> <div class='imgbox' id='dsy_D11_"+(09+i)+"' ><a href="+val.url+" target='_blank'><img  alt="+val.projectname+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><a href="+val.url+" target='_blank'>"+val.projectname+"</a><label><a href="+val.url+" target='_blank'>"+val.distinct+"</a></label></p><p>"+ val.price+"</p></div></div></li>");
+	 	                 newHouseUlId.append(liElt);
+	 	              }else
+	 	              {
+	 	                var liElt = $("<li> <div class='imgbox' id='dsy_D11_"+(09+i)+"' ><a href="+val.url+" target='_blank'><img  alt="+val.projectname+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><a href="+val.url+" target='_blank'>"+val.projectname+"</a><label><a href="+val.url+" target='_blank'>"+val.distinct+"</a></label></p><p>"+ val.price+"</p></div></div></li>");
+	                     newHouseUlId.append(liElt);
+	 	              }
+	 	           }
+	            }
+	           
+	            if(typeof(renthouseArr)!="undefined") {
+	            	for(var i=0;i<renthouseArr.length;i++)
+	 	           {
+	 	              var val=renthouseArr[i];
+	 	            // alert(val);
+	 	               if(i%2==0)
+	 	               {
+	 	                 var liElt = $("<li class='mar15'><div class='rimgbox' id='dsy_D11_"+(25+i)+"'> <a href="+val.url+" target='_blank'><img  alt="+val.quarters+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><label><a href="+val.url+" target='_blank'>"+val.distinct+"</a></label><a href="+val.url+" target='_blank'>"+ val.quarters+"</a></p><p><label>"+val.shi+"��"+val.ting+"��</label>"+val.price+"Ԫ/��</p></div></div>");
+	 	                 rentHouseUlId.append(liElt);
+	 	              }else
+	 	              {
+	 	                var liElt = $("<li> <div class='rimgbox' id='dsy_D11_"+(25+i)+"' ><a href="+val.url+" target='_blank'><img  alt="+val.quarters+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><label><a href="+val.url+" target='_blank'>"+val.distinct+"</a></label><a href="+val.url+" target='_blank'>"+ val.quarters+"</a></p><p><label>"+val.shi+"��"+val.ting+"��</label>"+val.price+"Ԫ/��</p></div></div>");
+	                     rentHouseUlId.append(liElt);
+	 	              }
+	 	           }
+	            }
+	           
+	            if(typeof(esfhouseArr)!="undefined"){
+	            	for(var i=0;i<esfhouseArr.length;i++)
+	 	           {
+	 	              var val=esfhouseArr[i];
+	 	               if(i%2==0)
+	 	               {
+	 	                 var liElt = $("<li class='mar15'><div class='rimgbox' id='dsy_D11_"+(17+i)+"'><div class='other'>Ӷ��0.5%</div><a href="+val.url +" target='_blank'><img  alt="+val.projectname+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><label><a href="+val.url+" target='_blank'>"+val.area+"�O</a></label><a href="+val.url+" target='_blank'>"+val.projectname+"</a></p><p><label>"+val.shi+"��"+val.ting +"��</label>"+val.price+"��Ԫ</p></div></div>");
+	 	                 esfHouseUlId.append(liElt);
+	 	              }else
+	 	              {
+	 	                var liElt = $("<li><div class='rimgbox' id='dsy_D11_"+(17+i)+"'><div class='other'>Ӷ��0.5%</div><a href="+val.url +" target='_blank'><img  alt="+val.projectname+" width='207' height='138' border='0' src="+val.picUrl+"></a><div class='texta'><p><label><a href="+val.url+" target='_blank'>"+val.area+"�O</a></label><a href="+val.url+" target='_blank'>"+val.projectname+"</a></p><p><label>"+val.shi+"��"+val.ting +"��</label>"+val.price+"��Ԫ</p></div></div>");
+	                     esfHouseUlId.append(liElt);
+	 	              }
+	 	           }
+	            }
+	           
+	            
+	        	
+	        }
+		});
+	}
+	
+}
+// im����Ϣ�����ɾ����ʾ��ʽ
+function changeClass(){
+	$("#messageAlert").removeClass("Nnews");
+}
+
+
+$(function(){
+    	$.ajax({
+			type:'get',
+            dataType:'jsonp',
+            url:"http://www1.fang.com/ajaxUserInfo.do",
+            complete:function(){
+            },
+            error:function(){
+            	//alert('error1');
+            },
+            success:function(res){
+          //  alert(res);
+            var ppUserid=res.feed.userid;
+            var ppUsername=res.feed.username;
+            var ppMobile=res.feed.mobile;
+            if(typeof(ppUserid)!="undefined"&&typeof(ppUsername)!="undefined"&&typeof(ppMobile)!="undefined")
+	    {
+	     
+	    
+
+            $("#userIdDiv").html(ppUserid);
+      		var ppCity=$("#hideCity").val();
+    	                 $.ajax({
+                    				type:'get',
+                    	            dataType:'jsonp',
+                    	            url:"http://www1.fang.com/kanfangAndOrderV2/number.do",
+                    	            data:"userid=" + ppUserid + "&username=" + ppUsername + "&mobile="+ppMobile + "&city="+ppCity,
+                    	            complete:function(){
+                    	            },
+                    	            error:function(){
+                    	            	//alert('error2');
+                    	            },
+                    	            success:function(res){
+                    	            	$('#order').html("("+res.result.orderSum+")");
+										$('#kanfang').html("("+res.result.kanfangSum+")");
+                    	            	$('#sfHeadRegister').css('display','block');//��¼�������ʾ�˳���Ĭ������
+                    	            	$('#slineId').css('display','none');
+                    	            	$('#dsy_D01_88').css('display','none');
+                    	            }
+                    			}); 
+		}
+            	
+            }
+		});
+
+	
+	$("#dsy_D11_03").hide();
+	//�����·������ַ����ⷿ�㼣��ʾ
+	$("#xfzuji").click(function(){
+		$("#xfzuji").addClass("active");
+		$("#esfzuji").removeClass("active");
+		$("#zfzuji").removeClass("active");
+		
+		$("#esfFootprint").hide();
+		$("#zfFootprint").hide();
+		$("#xfFootprint").show();
+		return false;
+	});
+	$("#esfzuji").click(function(){
+		$("#esfzuji").addClass("active");
+		$("#xfzuji").removeClass("active");
+		$("#zfzuji").removeClass("active");
+		
+		$("#xfFootprint").hide();
+		$("#zfFootprint").hide();
+		$("#esfFootprint").show();
+		return false;
+	});
+	$("#zfzuji").click(function(){
+		$("#zfzuji").addClass("active");
+		$("#xfzuji").removeClass("active");
+		$("#esfzuji").removeClass("active");
+		
+		$("#xfFootprint").hide();
+		$("#esfFootprint").hide();
+		$("#zfFootprint").show();
+		return false;
+	});
+	
+	
+	//top��������ʾ����������һ����ʱ����ʾ
+	 $(window).scroll(function () {
+	        if ($(window).scrollTop() >= 900) {
+	            $('#backTop').fadeIn();
+	        }
+	        else {
+	            $('#backTop').fadeOut();
+	        }
+	 });
+	 $('#dsy_D11_05').click(function () {
+		    $('html,body').animate({ scrollTop: 0 }, 500);
+		    return false;
+	 });
+	 
+	
+});var afp_src_url = document.getElementById('afp_src_url_FMT').value;
+var afp_link_url = document.getElementById('afp_link_url_FMT').value;
+var afp_time_url = "";
+var afp_count_limit = 99999;
+var afp_count_limit_cur = 0;
+var afp_timeout =8;
+var afp_objTimer; 
+var afp_open_tab = 0;
+var afp_status = 0;
+var afp_window_height = 0;
+var afp_window_scrollTop = 0;
+var afp_window_objTime;
+var afp_yoyi_open = false;
+var afp_yoyi_opening = false;
+var afp_yoyi_close = true;
+var afp_yoyi_closeing = false;
+var afp_objTimer100;
+//document.write("<img id='afp_fa_img' width=0 height=0 border=0>");
+if(afp_src_url!=""){
+	document.write("<div id='afp_fa_video' style='position:absolute; left:0px; top:0px; width:0px; height:0px; z-index:1000; visibility: visible; overflow: hidden;'></div>");
+}
+
+function afp_show_flash (afp_src_url)
+{
+	var flashStr = "";
+	flashStr+='<div style=" width:342px; height:270px;">';
+	flashStr+='<div style=" float:left; width:19px;"><img src="http://imgdn3.soufunimg.com/2013/12/30/bj/gebz/39144c499d884a3db1c57d518a23ce8a.gif" usemap="#afp_fa_map_tag" style="cursor:pointer;height:269px;width:19px;border:0"></div>';
+	flashStr+='<div style=" float:left; width:320px;">';
+	flashStr+=' <div style="height:26px;"><img src="http://imgd1.soufunimg.com/2016/06/24/25k/73629e98c44e446ba5c3897b9bdcb56b.gif" usemap="#afp_fa_map_top" style="height:26px;width:320px;border:0"></div>';
+	flashStr+='<div style="height:240px">';
+	flashStr+='<div style="position:absolute; width:30px; height:20px; margin:220px 0 0 0px;background:url(http://imgd2.soufunimg.com/2015/12/25/25k/71ea846c543c4065b86e95b5b3244712.png); z-index:100;"></div>';
+	if(afp_src_url.toLowerCase().indexOf("swf")>-1){
+		flashStr+='  <div style="width:320px; height:240px;overflow:hidden;">';
+		flashStr+=' <embed width="320" height="240" id="afp_fa_flash_object" plugspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="opaque" quality="autohigh" src="'+afp_src_url+'">';
+		flashStr+=' </div>';
+		flashStr+=' <div style="position:absolute; z-index:2; width:320px; height:240px; top:26px; left:19px;  visibility: visible;" id="afp_fa_blank_gif"><img width="320" height="240" border="0" style="cursor:pointer" onclick="Javascript:afp_ExCommand (\'link\');" src="http://imgdn.fang.com/blank.gif"></div>';
+	}else{
+		flashStr += "<img src='"+afp_src_url+"' alt='' onclick='Javascript:afp_ExCommand (\"link\");' border='0' style='cursor:pointer;width:320px;height:240px;'>"; 
+	}
+	flashStr+=' </div>';
+	flashStr+='<div style="height:3px; font-size:3px;"><img src="http://imgdn0.soufunimg.com/2013/12/30/bj/gebz/21a83e6307c44340a372874006816a4c.gif" style="height:3px;width:320px;vertical-align:top;border:0" /></div>';
+	flashStr+='</div>';
+	flashStr+=' <div style=" float:left; width:3px;"> <img src="http://imgdn1.soufunimg.com/2013/12/30/bj/gebz/f3a655f918d44a078da4ae0e6ad93358.gif" style="height:269px;width:3px;border:0"></div></div>';
+	flashStr += "<map name='afp_fa_map_tag'>";
+	flashStr += "<area shape='poly' coords='16,157,1,173,0,249,15,265' onmouseover='Javascript:afp_ExCommand (\"open\");'>";//20,110,1,127,1,226,20,239
+	flashStr += "</map>";
+	flashStr += "<map name='afp_fa_map_top'>";
+	flashStr += "<area shape='rect' coords='301,2,318,24'  style='cursor:pointer' onclick='Javascript:afp_ExCommand (\"close\");'>";
+	flashStr += "</map>";
+	document.getElementById("afp_fa_video").innerHTML = flashStr;
+	setInterval("afp_faResize()",100);
+}
+function afp_faResize() 
+{
+	if(!document.getElementById("afp_fa_video"))
+	{
+		return;
+	}
+	var afp_divHeight = document.getElementById("afp_fa_video").offsetHeight;
+	var afp_divWidth = document.getElementById("afp_fa_video").offsetWidth;
+	var afp_docWidth = 0;
+	var afp_docHeight = 0;
+	var afp_scrollLeft = 0;
+	var afp_scrollTop = 0;
+	if(window.pageXOffset)
+	{
+		afp_scrollLeft=window.pageXOffset;
+	}
+	else if(document.documentElement&&document.documentElement.scrollLeft)
+	{
+		afp_scrollLeft=document.documentElement.scrollLeft;
+	}
+	else if(document.body)
+	{
+		afp_scrollLeft=document.body.scrollLeft; 
+	}
+	if(window.pageYOffset)
+	{
+		afp_scrollTop=window.pageYOffset;
+	}
+	else if(document.documentElement&&document.documentElement.scrollTop)
+	{
+		afp_scrollTop=document.documentElement.scrollTop;
+	}
+	else if(document.body)
+	{
+		afp_scrollTop=document.body.scrollTop;
+	}
+	if(window.innerWidth)
+	{
+		afp_docWidth=parseInt(window.innerWidth) - 17;
+	}
+	else if(document.documentElement&&document.documentElement.clientWidth)
+	{ 
+		afp_docWidth=document.documentElement.clientWidth;
+	}
+	else if(document.body)
+	{
+		afp_docWidth=document.body.clientWidth; 
+	}
+	if(window.innerHeight)
+	{
+		afp_docHeight=parseInt(window.innerHeight) - 17;
+	}
+	else if(document.documentElement&&document.documentElement.clientHeight)
+	{ 
+		afp_docHeight=document.documentElement.clientHeight; 
+	}
+	else if(document.body)
+	{
+		afp_docHeight=document.body.clientHeight;
+	}
+	
+	document.getElementById("afp_fa_video").style.top = (parseInt(afp_docHeight) - parseInt(afp_divHeight) + parseInt(afp_scrollTop)) + "px";
+	document.getElementById("afp_fa_video").style.left = (parseInt(afp_docWidth) - parseInt(afp_divWidth) + parseInt(afp_scrollLeft)) + "px";
+}
+	
+function afp_faMoveLeft()
+{
+	var step = 50;
+	afp_yoyi_opening = true;
+	var afp_divLefts = parseInt(document.getElementById("afp_fa_video").style.left); 
+	var afp_divWidths = parseInt(document.getElementById("afp_fa_video").style.width);
+	if (342 - afp_divWidths < 50)
+	{
+		step = 342 - afp_divWidths;
+		window.clearInterval(afp_objTimer);
+		afp_yoyi_opening = false;
+		afp_yoyi_open = true;
+	}
+	
+	document.getElementById("afp_fa_video").style.left = (afp_divLefts - step) + "px"; 
+	document.getElementById("afp_fa_video").style.width = (afp_divWidths + step) + "px";
+}
+function afp_faMoveRight()
+{
+	var step = 50;
+	afp_yoyi_closeing = true;
+	var afp_divLefts = parseInt(document.getElementById("afp_fa_video").style.left);
+	var afp_divWidths = parseInt(document.getElementById("afp_fa_video").style.width);
+	if (afp_divWidths <= 42)
+	{
+		step = afp_divWidths - 15;
+		window.clearInterval(afp_objTimer);
+		mark_three=2;
+		afp_yoyi_closeing = false;
+		afp_yoyi_close = true;
+	}
+	document.getElementById("afp_fa_video").style.width = (afp_divWidths - step) + "px";
+	document.getElementById("afp_fa_video").style.left = (afp_divLefts + step) + "px";
+	if (afp_divWidths <= 42)
+	{
+		afp_yoyi_open = false;
+	}
+}
+function afp_faTracker(s)
+{
+	if (!document.getElementById("afp_fa_img"))
+	{
+		return;
+	}
+	if (afp_count_limit_cur <= afp_count_limit)
+	{
+		document.getElementById("afp_fa_img").src = s;
+	}
+}
+function afp_ExCommand(command)
+{
+	if(command == "open" && afp_open_tab == 0 && afp_yoyi_open==false && afp_yoyi_close==true)
+	{
+		afp_open_tab = 1;
+		afp_status = 0;
+		afp_count_limit_cur ++;
+		afp_faTracker(afp_time_url+"0");
+		document.getElementById("afp_fa_video").style.width = "17px";
+		document.getElementById("afp_fa_video").style.height = "285px";
+		afp_faResize();
+		afp_objTimer = window.setInterval("afp_faMoveLeft()",50);
+		afp_objTimer100 = setTimeout("afp_ExCommand ('pos100')", afp_timeout * 1000);
+	}
+	else if(command == "pos100")
+	{
+		if (afp_status == 0)
+		{
+			afp_faTracker(afp_time_url+"100");
+		}
+		afp_objTimer = window.setInterval("afp_faMoveRight()",50) 
+		afp_open_tab = 0;
+	}
+	else if(command == "close")
+	{
+		window.clearInterval(afp_objTimer100);
+		afp_faTracker(afp_time_url+"-1");
+		afp_objTimer = window.setInterval("afp_faMoveRight()",50) 
+		afp_open_tab = 0;
+		afp_status = -1;
+		afp_yoyi_open = false;
+		afp_yoyi_close = true;
+	}
+	else if(command == "share")
+	{
+		window.open("mailto:?subject=%B1%EA%CC%E2%A3%BA%CD%C6%BC%F6%BE%AB%C3%C0Flash&body=%C4%DA%C8%DD%A3%BA%C4%FA%B5%C4%BA%C3%D3%D1%CE%AA%C4%FA%CD%C6%BC%F6%C1%CB%D2%BB%B8%F6Flash%B6%CC%C6%AC%2C%C4%FA%BF%C9%D2%D4%B5%E3%BB%F7%C8%E7%CF%C2%B5%D8%D6%B7%D0%C0%C9%CD%3A"+window.location);
+	}
+	else if(command == "link")
+	{
+		window.open(afp_link_url);
+	}
+	else if(command == "download")
+	{
+		window.open(afp_src_url);
+	}
+	return 1;
+}
+function afp_setOpen_flash(){
+	afp_window_height = jQuery(window).height();
+	afp_window_objTime = window.setInterval('afp_open_flash()',50);
+}
+function afp_open_flash(){
+	if(afp_window_scrollTop<afp_window_height){
+		afp_window_scrollTop = jQuery(window).scrollTop();
+	}else{
+		window.clearInterval(afp_window_objTime);
+		setTimeout("afp_ExCommand ('open')", 2000);
+	}
+}
+
+if(afp_src_url!=""){
+	afp_show_flash (afp_src_url);
+}
+
+afp_setOpen_flash();var detime = 6000;
+
+function changediv_100035(){
+	document.getElementById('QPhiddenLayer_100035').style.display = "block";
+    document.getElementById('QPhiddenLayer_100035_clock').style.display="block";
+    setTimeout("hidediv_100035()",detime)
+}
+function hidediv_100035(){
+	 document.getElementById('QPhiddenLayer_100035').style.display="none";
+	 document.getElementById('QPhiddenLayer_100035_clock').style.display="none";
+}
+
+function showfull_100035(){
+	if(typeof jQuery=="function"){
+        jQuery("#QPhiddenLayer_100035").slideDown(1500,function(){
+            document.getElementById('QPhiddenLayer_100035_clock').style.display="block";
+            window.setTimeout(function(){
+                jQuery("#QPhiddenLayer_100035").slideUp(1500);
+                document.getElementById('QPhiddenLayer_100035_clock').style.display="none";
+            },detime);
+        });
+    }else{
+        setTimeout("changediv_100035()",1000);
+    }
+}
+function clock(){
+	document.getElementById('QPhiddenLayer_100035').style.display="none";
+    document.getElementById('QPhiddenLayer_100035_clock').style.display="none";
+}
+function QPhiddenLayer_100035_move(){
+	document.getElementById('QPhiddenLayer_100035_clock').style.backgroundColor="#666";
+}
+function QPhiddenLayer_100035_out(){
+	document.getElementById('QPhiddenLayer_100035_clock').style.backgroundColor="#ccc";
+}
+function addLoadEvent__yoyi(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {  
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}	
+addLoadEvent__yoyi(function(){
+	if(typeof __full__yoyi=="undefined"){
+		showfull_100035();
+		__full__yoyi="true";
+	}
+});

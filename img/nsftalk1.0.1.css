@@ -1,0 +1,129 @@
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,legend,buttonform,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0}
+ol,ul{list-style: none;}
+img{border:none}
+/*a{ color:#05b; text-decoration:underline}
+a:hover{}*/
+/*public*/
+.floatl{ float:left}
+.floatr{ float:right}
+.numPl12{ padding:0 5px 0 12px}
+.numPr12{ padding:0 12px 0 5px}
+.im_num{ padding:0 2px; font-family:Arial}
+.red{ color:#f30}
+.blue{ color:#05b}
+.gray3,.gray3 a{ color:#333; text-decoration:none}
+.gray3 a:hover{ color:#05b}
+.gray6,.gray6 a{ color:#666;text-decoration:none}.gray6 a:hover{ color:#05b;text-decoration:none}
+.black0,.black0 a,.black0 a:hover{ color:#000; text-decoration:none}
+.bold{ font-weight:bold}
+.clear{ clear:both; height:0; line-height:0; font-size:0; overflow:hidden}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}/*for w3c*/
+.clearfix{zoom:1;}/*for IE*/
+
+/*main*/
+.OnlineTalk{position:fixed;_position:absolute;_top:expression(eval(document.compatMode&&document.compatMode=='CSS1Compat')?documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight)-0: document.body.scrollTop+(document.body.clientHeight-this.clientHeight) -0);bottom:0; right:0; z-index:10000;text-align:left;font:12px/22px 'Microsoft YaHei','Arial', "SimSun", HELVETICA, "Hiragino Sans GB";}
+.iconZaiXian{background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconZaiXian.gif) 0 45% no-repeat; padding-left:15px;}
+.iconYinShen{background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconYinShen.gif) 0 45% no-repeat; padding-left:15px;}
+.jiezi{width:90px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.iconZXH{width:12px;height:20px;margin-top:5px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconZXH.gif) 0 7px no-repeat;display:inline-block}
+.iconZXH:hover{width:12px;height:20px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconZXHhover.gif) 0 7px no-repeat;}
+.iconClose{width:8px;height:7px; margin-top:9px;background:url(images/iconClose.gif) no-repeat;display:none}
+.iconClose:hover{width:8px;height:7px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconCloseHover.gif) no-repeat;}
+.iconCloseBig{width:12px;height:12px; margin-top:7px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconCloseBig.gif) no-repeat;}
+.iconCloseBig:hover{width:12px;height:12px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconCloseBigHover.gif) no-repeat;}
+.iconLaba{background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconLaBa.gif) 0 45% no-repeat; padding-left:20px;}
+.iconTalkImg{ width:15px; height:13px; margin:6px 11px 0 0; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconImg.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTalkImg:hover{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconImgOn.gif) no-repeat}
+.iconTalkAudio{ width:17px; height:13px; margin:6px 11px 0; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconAudio.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTalkAudio:hover{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconAudioOn.gif) no-repeat}
+.iconTalkVideo{ width:16px; height:13px; margin:6px 11px 0; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconVideo.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTalkVideo:hover{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconVideoOn.gif) no-repeat}
+.iconTalkImgOn{ width:15px; height:13px; margin-top:6px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconImgOn.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTalkAudioOn{ width:17px; height:13px; margin:6px 22px 0 22px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconAudioOn.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTalkVideoOn{ width:16px; height:13px; margin-top:6px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconVideoOn.gif) no-repeat;display:inline-block; cursor:pointer}
+.iconTixing{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconTixing.png) 0 0 no-repeat; padding-left:20px;}
+.iconChenggong{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconchenggong.png) 0 0 no-repeat; padding-left:20px;}
+.btnOnlineTalk,.btnOnlineTalkOn{ width:142px; height:35px; padding-left:40px; font:normal 12px/35px SimSun; color:#000; background:url(http://img1.soufun.com/house/images/chat/btnTalkOnlinenew.gif) no-repeat; cursor:pointer;float:right}
+.btnOnlineTalkUp{ width:142px; height:35px; padding-left:40px; font:normal 12px/35px SimSun; color:#000; background:url(http://img1.soufun.com/house/images/chat/btnTal2.gif) no-repeat; cursor:pointer;float:right}
+.btnOnlineTalkOn{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnTalkOnlineOn.gif) no-repeat;}
+.btnOnlineTalkOn:hover{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnTalkOnlineOnHover.gif) no-repeat}
+.btnMessage{width:115px;right:182px; z-index:9; position:absolute;height:35px; padding-left:45px; margin-right:-1px;font:normal 12px/35px SimSun;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnMessage.gif) 0 0 repeat; cursor:pointer;}
+.btnMessage a{ padding-right:20px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnMessage.gif) right top no-repeat; display:inline-block}
+/*talkBox*/
+.talkBox{width:182px; position:relative}
+.talkBox .im_title{ width:157px;padding:0 10px 0 15px; font:normal 12px/27px SimSun; line-height:30px\9;height:27px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/titleBg.gif) no-repeat; overflow:hidden}
+.talkBox .con{width:180px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/conBg.gif) repeat-y; }
+.talkList{width:180px;height:340px;padding:10px 1px; font:normal 12px/25px Arial,SimSun;overflow-y:scroll; overflow-x:hidden}
+.talkList dt{width:125px;padding:0 6px 0 31px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconDot.gif) 18px 45% no-repeat; float:left}
+.talkList dd{width:125px;padding:0 6px 0 31px;float:left; cursor:pointer}
+.talkList dd .talkImg{ width:11px; height:12px; margin:5px 0 0 5px; float:left;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconTalk.gif) no-repeat;}
+.talkList .bgGray, .talkList .userinfo:hover{background:#f5f5f5}
+.talkList .bgGray .iconClose, .talkList .userinfo:hover .iconClose{ display:inline-block}
+.talkList .borderGray{ width:120px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/listOnBg.gif) repeat-x; border-right:1px solid #bbb; left:-1px; z-index:1; position:relative}
+/*talk dbox*/
+.talkDetail{ width:346px;top:0px;right:182px; z-index:10; position:absolute}
+.talkDetail .talkTitle{width:320px;padding:0 10px 0 16px; font:normal 12px/27px SimSun; line-height:30px\9;height:27px;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/titleBigBg.gif) no-repeat;}/*20151127 blue 删除 overflow:hidden*/
+.talkDetail .talkCon{width:345px; height:360px;border-left:1px solid #bbb;background:#fff;}
+.talkDetail .talkBottom{ width:315px; padding:0px 15px 0 16px; height:35px; font:normal 12px/35px SimSun; color:#333; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/bottomBg.gif) no-repeat}
+.talkDetail .talkBottom .btnSend{ width:68px; height:22px; margin-top:6px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnSend.gif) no-repeat; border:none; cursor:pointer}
+.talkDetail .talkBottom .btnSend:hover{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnSendHover.gif) no-repeat;}
+.talkDetail .dialogueCon{ width:100%; height:208px; overflow-y:scroll; overflow-x:hidden; position:relative}
+.talkDetail .talkMessage01{ width:326px; height:22px; padding:0 5px; margin:0 0 4px 3px;font:normal 12px/22px SimSun; line-height:24px\9; background:#ffffe1; border:1px solid #d4ac42; overflow:hidden}
+.talkDetail .talkMessage02{ width:285px; padding:3px 25px 2px 26px;font:normal 12px/18px SimSun; background:#e8f4ce url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconMessage.gif) 4px 2px no-repeat;border:1px solid #b1bc9b; overflow:hidden; /*top:60px;*/ left:4px; z-index:1;position:relative;}
+.talkDetail .talkMessage02 .messageClose{ width:10px; height:10px; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/messageClose.gif) no-repeat; display:inline-block; top:4px; right:4px; position:absolute}
+.talkDetail .dialogue{ width:315px; padding:0 15px 0 15px; margin:10px 0; overflow:hidden}
+.talkDetail .dialogue dt,.talkDetail .dialogue dd{ width:315px;font:normal 12px/18px SimSun;}
+.talkDetail .dialogue dt{ height:20px; overflow:hidden}
+.talkDetail .dialogue .image, .talkDetail .dialogue img{ width:70px; height:55px; overflow:hidden;display:inline-block;cursor:pointer;}
+.talkDetail .dialogue .video{ width:60px; height:60px; overflow:hidden;background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/video_icon.jpg) no-repeat;display:block;cursor:pointer;}
+.talkDetail .dialogue .resend{ margin:5px 0 0 10px; color:#666; clear:left;}
+.talkDetail .dialogue .resend a{ color:#05b; text-decoration:underline}
+.talkDetail .dialogue .resend a:hover{color:#05b; text-decoration:none}
+.talkDetail .dialogue .other{ color:#05b}
+.talkDetail .dialogue .chatother{ color:#05b}
+.talkDetail .dialogue .me{ color:#008000}
+.talkDetail .dialogue .audioOn,.talkDetail .dialogue .audioStop{ width:90px; height:22px; padding-left:50px; font:normal 12px/22px SimSun; color:#000; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/audioOn.gif) no-repeat; cursor:pointer}
+.talkDetail .dialogue .audioStop{ background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/audioStop.gif) no-repeat}
+.talkDetail .talkTool{ width:315px;height:26px; padding:0 15px; font:normal 12px/26px SimSun; line-height:28px\9;background:#e9e9e9; position:relative}
+.talkDetail .talkTool .historyNone{ font:normal 12px/18px SimSun; right:20px; top:-22px; z-index:2; position:absolute}
+.talkDetail .talkLuRu{ width:345px; position:relative}
+.talkDetail .talkLuRu .textarea{ width:335px;height:66px;padding:5px; border:none; resize:none;font:normal 12px/18px SimSun;background:#fff; /*color:#959595;*/ overflow:hidden; /*position:absolute; */z-index:1}
+.talkDetail .talkLuRu .talkNull{position:absolute;font:normal 12px/18px SimSun; top:0px; margin-left:15px; z-index:2}
+.talkDetail .talkLuRu .upload{position:absolute;padding-left:5px; z-index:2;background:#E9E9E9;border-top: 1px solid #CCCCCC;width: 100%;font:normal 12px/18px SimSun; top:0px; left:0px;}
+.talkDetail .talkAudioBg{ width:346px;height:26px;margin-bottom:1px;background:#dcebf9; overflow:hidden; position:absolute; top:265px; left:0;}
+.talkDetail .talkAudioBg .btnStopAudio{ width:64px; height:22px; margin-top:2px; border:none; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/btnStopAudio.gif) no-repeat; cursor:pointer}
+.talkDetail .talkAudioBg .talkAudio{height:26px;background:#a5caef; position:absolute; top:0; left:0; z-index:1}
+.talkDetail .talkAudioBg .talkAudioInfo{width:300px;height:26px; padding:0 15px 0 30px;font:normal 12px/26px SimSun;line-height:28px\9; background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/dotRed.png) 15px 7px no-repeat;position:absolute;top:0;left:0;z-index:2}
+.sftalkImgViewer{position:fixed;top:0px;left:0px;z-index:10001;margin:0px;width:800px;height:100%;overflow-y:auto;overflow-x:hidden;_position:absolute;_top:expression(eval(document.compatMode&&document.compatMode=='CSS1Compat')?documentElement.scrollTop: document.body.scrollTop);}
+.sftalkImgViewer .close {position:absolute;right:0px;top:0px;font-size:12px;color:#fff;text-decoration:none;display:none;background:#0D0D0D;width:30px;height:15px;line-height:15px;padding-left:4px;}
+.sftalkImgViewer:hover .close {display:block;}
+.sftalkImgViewer .close:visited{color:#fff;text-decoration:none;}
+.sftalkImgViewer img{display:block;margin:0px;}
+
+.sideMen ul li { display:block; background-position:20px 45%; padding:0 0 0 35px; color:#666; width:118px; height:24px; line-height:24px; overflow:hidden; }
+.sideMen ul.max li.current { border:1px solid #bbb; border-left:1px solid #fff;}
+.sideMen ul li span {float:left; display:inline;height:24px; line-height:24px; }
+.sideMen ul li .talk_ft { width:100px; margin-right:3px; text-overflow: ellipsis; -o-text-overflow:ellipsis;white-space:nowrap; overflow:hidden;}
+.sideMen { width:180px;overflow:hidden; height:360px;overflow:auto;}
+.sideMen h3{ height:32px; line-height:32px; /*padding-left:10px;  border-top:1px solid #e3e3e3;*/font:normal 14px/30px "Microsoft YaHei"; color:#666;font-weight:bold;display: block;border: none;position: static;}/*国际版样式冲突，增加默认样式border: none;position: static;*/
+.sideMen h3 em{ float:left; display:block; width:20px; height:32px;   background:url(http://img1.soufun.com/house/detail_php/icoAdd.png) 5px 12px no-repeat; cursor:pointer;}
+.sideMen h3 em.on{ background-position:5px -57px; }
+.sideMen li{cursor: pointer;}
+/*新增样式*/
+.blue_alertCon{position: absolute;right: 0;bottom: 0;width: 180px;line-height: 33px;text-align: center;font-size: 12px;color: #999;background: #ddd;border: 1px solid #999;z-index: 99;}
+.btnService{width: 142px;height: 35px;padding-left: 40px;font: bold 18px/35px SimSun;color: #000;background: url(../images/up.jpg) no-repeat;cursor: pointer;float: right;}
+.btnServiceUp{width: 142px;height: 35px;padding-left: 40px;font: bold 18px/35px SimSun;color: #000;background: url(../images/down.jpg) no-repeat;cursor: pointer;float: right;}
+.btnPhone{width: 260px;right: 182px;z-index: 8;position: absolute;height: 35px;background-color: #c00;color: white;margin-right:-1px;font-size: 17px;text-align: center;line-height: 35px;}
+.im_onlineTime{padding: 10px 0;height: 49px;text-align: center;border-top: 1px solid #ccc;width:180px;}
+/*增加最新需求：左上角聊天框增加人物头像及电话等，并且修改为最新样式*/
+.im_head{position: relative;height: 27px;width: 49px;}
+.im_head .im_head_img{width: 45px;height:45px;position: absolute;bottom: 0px;left: 0px;border: 2px solid #bbb;z-index: 0;}
+.im_head .im_head_img img{width: 45px;height: 45px;}
+.im_status {background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconYinShen.gif) 0 45% no-repeat;width:10px;height:10px;position: absolute;right: 2px;bottom: 2px;}
+.im_status_ol{background:url(http://js.soufunimg.com/home/jiancai/chat/CSS/images/iconZaiXian.gif) 0 45% no-repeat;}
+.im_name{padding-left: 10px;color: #000;font-weight: bold;font-size: 14px;display: block;width:65px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.im_tel{padding-left: 20px;margin-left:20px;font-size: 12px;background: url(../images/tel.gif) no-repeat left center;}
+/*增加立即下载需求*/
+.im_download{width: 315px;padding: 5px 15px;height: 35px;font: normal 12px/18px SimSun;color: #000;background: #fff3db;}
+.im_download a{color: #0000ff;}
