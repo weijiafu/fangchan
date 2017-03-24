@@ -20,8 +20,11 @@
 		font-size: 19px;
 		padding: 12px;
 		float: left;
+		z-index: 3;
 	}
-	
+	.newavnr01 a{
+		color: white;
+	}
 	.newavnr01:hover {
 		background-color: red;
 	}
@@ -163,7 +166,7 @@
 		position: absolute;
 		left: 220px;
 		top: 50px;
-		z-index: 999;
+		z-index: 2;
 	}
 	.search a{
 		color: #FFF3DB;
@@ -209,7 +212,7 @@
 		line-height: 15px;
 		font-size: 12px;
 	}
-
+	/*j精品推荐*/
 	.recommend_info{
 		overflow: hidden;
 		width: 1200px;
@@ -224,6 +227,11 @@
 		line-height: 44px;
 		font-size: 20px;
 	}
+	.recommend_title:hover{
+		border:none;
+		border-top: 1px solid red;
+		background-color: white;
+	}
 	.recommend_title a{
 		text-decoration: none;
 		color: black;
@@ -231,6 +239,7 @@
 	}
 	.selling_information{
 		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 	.pic_box{
 		margin-right: 10px;
@@ -243,7 +252,7 @@
 	.pic_text{
 		width: 90%;
 		position: absolute;
-		top:150px;
+		top:155px;
 		background-image:  rgba(0,0,0,0.5);
 		z-index: 999;
 		background-color: rgba(0,0,0,0.5);
@@ -277,7 +286,26 @@
 		color: red;
 	}
 	.info1 p{
-
 		font-size: 0.5em;
 		color: #bbb;
+	}
+	.info2{
+		width: 100%;
+		line-height: 27px;
+	}
+	.info2 p{
+		text-align: left;
+		font-size: 10px;
+	}
+	.info2 span{
+		color: red;
+		font-size: 5px;
+		margin: 3px;
+	}
+	.info2 p a{
+		margin-left: 5px;
+		text-decoration: none;
+		padding: 3px 8px;
+		border:1px solid #ddd;
+		color: black;
 	}
